@@ -43,7 +43,14 @@ function copyArray(n,matrix1){
      apidata: []
     }
 
+    
 
+   addmatrix = e =>{
+      if(this.state.row < 6){
+        this.state.martix1.push([])
+        this.setState({n:this.state.row+1})
+      }
+   }
 
    buildmatrix(){
      let martrixAA  = []
@@ -57,21 +64,28 @@ function copyArray(n,matrix1){
      return martrixAA;
    } 
 
+   showvalue = e =>{
+     this.setState({result: calmartix(this.setState.row)})
+   }
+
   render(){
     return(
       <div>
         <h1>Testmatrix</h1>
         <div className ="TOP">
-          <button style = {{margin: "10px"}} onClick="">ADD</button>
+          <button style = {{margin: "10px"}} onClick={this.addmatrix}>ADD</button>
           <button style = {{margin: "10px"}} onClick="">DEL</button>
         </div>
         
         <div>
-          <button style = {{margin: "10px"}} onClick="">คำนวณ</button>
+          <button style = {{margin: "10px"}} onClick= {this.showvalue}>คำนวณ</button>
           <button style = {{margin: "10px"}} onClick="">ตัวอย่าง</button>
         </div>
         <div>
         {this.buildmatrix()}
+        </div>
+        <div>
+          {this.showvalue}
         </div>
       </div>
 
