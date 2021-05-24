@@ -12,7 +12,7 @@ function copyArray(n,matrix1){
        arr[i] = [...matrix1[i]]                                    
    }
    return arr;
-
+   
 }
 
   function calmartix(n,matrixA,martixB) {
